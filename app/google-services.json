@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "216088407606",
+    "project_id": "goklinik-b4db7",
+    "storage_bucket": "goklinik-b4db7.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:216088407606:android:6aad0aee6cabe262013297",
+        "android_client_info": {
+          "package_name": "com.tubes.myapplication"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "216088407606-gqnqajlmad8nlf3o1anj4ahb95punlp0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD4ybc6lioPjVYY-e2jjuB0aSVCdC2FLHQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "216088407606-gqnqajlmad8nlf3o1anj4ahb95punlp0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

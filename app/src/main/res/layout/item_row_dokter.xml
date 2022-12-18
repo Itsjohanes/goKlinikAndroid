@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="5dp">
+
+    <ImageView
+        android:id="@+id/img_item_photo"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginEnd="16dp"
+        android:scaleType="fitXY"
+        tools:src="@tools:sample/avatars"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/tv_item_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:text="@string/nama_dokter"
+            />
+
+        <TextView
+            android:id="@+id/tv_item_spesialis"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:textSize="12sp"
+            android:textColor="@color/black"
+            android:justificationMode="inter_word"
+            android:text="@string/spesialis"
+            />
+        <Button
+            android:id="@+id/btn_buatjanji"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Buat Janji"
+            android:textAllCaps="false"
+            android:textSize="12sp"
+            android:enabled="false"/>
+
+    </LinearLayout>
+
+</LinearLayout>
