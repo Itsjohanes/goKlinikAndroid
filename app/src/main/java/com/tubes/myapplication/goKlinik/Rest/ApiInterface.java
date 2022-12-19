@@ -47,7 +47,8 @@ public interface ApiInterface {
     @Multipart
     @POST("restapi_pasien.php")
     Call<Pasien> update_pasien(@Query("function") String function,
-                                        @Query("id_pasien") String id_pasien,
+                                        @Query("id") String id_pasien,
+                                        @Query("usernamelama") String usernamelama,
                                         @Part("username") RequestBody username,
                                         @Part("password") RequestBody password,
                                         @Part("nama") RequestBody nama,

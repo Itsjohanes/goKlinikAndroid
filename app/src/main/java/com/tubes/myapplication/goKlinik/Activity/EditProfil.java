@@ -95,6 +95,7 @@ public class EditProfil extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Call<Pasien> putHerosCall = mApiInterface.update_pasien("update_pasien", id_pasien,
+                        username,
                         RequestBody.create(MediaType.parse("text/plain"), edtUsername.getText().toString()),
                         RequestBody.create(MediaType.parse("text/plain"), edtPassword.getText().toString()),
                         RequestBody.create(MediaType.parse("text/plain"), edtNama.getText().toString()),
@@ -106,25 +107,32 @@ public class EditProfil extends AppCompatActivity {
                 putHerosCall.enqueue(new Callback<Pasien>() {
                     @Override
                     public void onResponse(Call<Pasien> call, Response<Pasien> response) {
-                        AlertDialog.Builder builder = new AlertDialog.Builder(EditProfil.this);
-                        // Set the message show for the Alert time
-                        builder.setMessage("Mohon Login Ulang!");
-                        // Set Alert Title
-                        builder.setTitle("Edit Data Profil Berhasil");
-                        // Set Cancelable false for when the user clicks on the outside the Dialog Box then it will remain show
-                        builder.setCancelable(false);
+                        String message = response.body().getMessage();
+                        if(!message.equals("Username Sudah Ada") || edtUsername.getText().toString().equals(username)){
 
-                        // Set the positive button with yes name Lambda OnClickListener method is use of DialogInterface interface.
-                        builder.setPositiveButton("Yes", (DialogInterface.OnClickListener) (dialog, which) -> {
-                            // When the user click yes button then app will close
-                            Intent intent = new Intent(EditProfil.this, MasukActivity.class);
-                            startActivity(intent);
-                            finish();
-                        });
-                        // Create the Alert dialog
-                        AlertDialog alertDialog = builder.create();
-                        // Show the Alert Dialog box
-                        alertDialog.show();
+
+                            AlertDialog.Builder builder = new AlertDialog.Builder(EditProfil.this);
+                            // Set the message show for the Alert time
+                            builder.setMessage("Mohon Login Ulang!");
+                            // Set Alert Title
+                            builder.setTitle("Edit Data Profil Berhasil");
+                            // Set Cancelable false for when the user clicks on the outside the Dialog Box then it will remain show
+                            builder.setCancelable(false);
+
+                            // Set the positive button with yes name Lambda OnClickListener method is use of DialogInterface interface.
+                            builder.setPositiveButton("Yes", (DialogInterface.OnClickListener) (dialog, which) -> {
+                                // When the user click yes button then app will close
+                                Intent intent = new Intent(EditProfil.this, MasukActivity.class);
+                                startActivity(intent);
+                                finish();
+                            });
+                            // Create the Alert dialog
+                            AlertDialog alertDialog = builder.create();
+                            // Show the Alert Dialog box
+                            alertDialog.show();
+                        }else{
+                            Toast.makeText(getApplicationContext(), "Username Sudah Ada", Toast.LENGTH_LONG).show();
+                        }
                     }
 
                     @Override
