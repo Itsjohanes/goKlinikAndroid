@@ -67,6 +67,7 @@ public class ObatActivity extends AppCompatActivity {
                 Log.d("Retrofit Get", "Jumlah data obat: " +
                         String.valueOf(dokterList.size()));
                 ListObatAdapter listDokterAdapter = new ListObatAdapter(dokterList);
+                mRecyclerView.setItemViewCacheSize(dokterList.size());
                 mRecyclerView.setAdapter(listDokterAdapter);
 
                 //Onclick
